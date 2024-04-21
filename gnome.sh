@@ -32,9 +32,13 @@ dconf load /org/gnome/settings-daemon/ < ./confs/gnome-settings-daemon.ini
 dconf load /org/gnome/desktop/background/ < ./confs/gnome-desktop-background.ini
 dconf load /org/gnome/desktop/interface/ < ./confs/gnome-desktop-interface.ini
 
+# privacy settings
+dconf load /org/gnome/desktop/privacy/ < ./confs/gnome-desktop-privacy.ini
+
 # misc settings
 dconf write /org/gnome/desktop/peripherals/mouse/accel-profile "'flat'"
 dconf write /org/gnome/mutter/workspaces-only-on-primary false
+dconf write /org/gnome/desktop/datetime/automatic-timezone true
 
 
 # load shell config

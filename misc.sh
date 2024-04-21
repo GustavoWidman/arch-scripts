@@ -7,8 +7,5 @@ if [ "$(id -u)" != "0" ]; then
     exit 1
 fi
 
-# Install discord
-pacman -Syu --noconfirm discord
-
-# Install Vencord
-sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
+# add user to the uucp group for serial port access
+usermod -aG uucp $(logname)

@@ -7,7 +7,7 @@ if [ "$(id -u)" != "0" ]; then
     exit 1
 fi
 
-yes | pacman -Sy --needed git base-devel
+pacman -Syu --noconfirm --needed git base-devel
 
 git clone https://aur.archlinux.org/yay.git
 

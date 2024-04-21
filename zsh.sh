@@ -7,8 +7,8 @@ if [ "$(id -u)" != "0" ]; then
     exit 1
 fi
 
-# Install zsh
-yes | pacman -Sy zsh
+# Install zsh, bat, fzf and thefuck
+pacman -Syu --noconfirm zsh bat fzf
 
 # Install oh-my-zsh (root)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
@@ -27,6 +27,12 @@ curl -Lo /root/.oh-my-zsh/custom/themes/r3dlust.zsh-theme https://links.r3dlust.
 # Install custom zshrc
 curl -Lo /home/$(logname)/.zshrc https://links.r3dlust.com/zshrc
 curl -Lo /root/.zshrc https://links.r3dlust.com/zshrc
+
+# Custom nanorc
+curl -Lo /etc/nanorc https://links.r3dlust.com/nanorc
+
+# Make opening nano as root have red titlebar
+echo "set titlecolor lightwhite,red" >> /root/.nanorc
 
 source /home/$(logname)/.zshrc
 
