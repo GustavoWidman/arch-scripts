@@ -20,9 +20,8 @@ yes | pacman -Sy flatpak ttf-fira-code
 flatpak install flathub com.raggesilver.BlackBox -y
 
 # copy config from ./confs/blackbox-settings.ini to ~/.var/app/com.raggesilver.BlackBox/config/glib-2.0/settings/keyfile (make a keyfile or overwrite the existing one and make directories recursively if needed)
-mkdir -p ~/.var/app/com.raggesilver.BlackBox/config/glib-2.0/settings
-cp ./confs/blackbox-settings.ini ~/.var/app/com.raggesilver.BlackBox/config/glib-2.0/settings/keyfile
-
+mkdir -p /home/$(logname)/.var/app/com.raggesilver.BlackBox/config/glib-2.0/settings
+cp ./confs/blackbox-settings.ini /home/$(logname)/.var/app/com.raggesilver.BlackBox/config/glib-2.0/settings/keyfile
 
 # load gnome keybindings
 dconf load /org/gnome/desktop/wm/keybindings/ < ./confs/gnome-keybindings.ini
@@ -39,7 +38,6 @@ dconf load /org/gnome/desktop/privacy/ < ./confs/gnome-desktop-privacy.ini
 dconf write /org/gnome/desktop/peripherals/mouse/accel-profile "'flat'"
 dconf write /org/gnome/mutter/workspaces-only-on-primary false
 dconf write /org/gnome/desktop/datetime/automatic-timezone true
-
 
 # load shell config
 dconf load /org/gnome/shell/ < ./confs/gnome-shell.ini

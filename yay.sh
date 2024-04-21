@@ -7,6 +7,12 @@ if [ "$(id -u)" != "0" ]; then
     exit 1
 fi
 
+# Check if yay is installed
+if yay --version &> /dev/null; then
+    echo "Yay is already installed. Skipping..."
+    exit 0
+fi
+
 pacman -Syu --noconfirm --needed git base-devel
 
 git clone https://aur.archlinux.org/yay.git

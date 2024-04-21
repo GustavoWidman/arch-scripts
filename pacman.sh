@@ -13,3 +13,6 @@ sed -i 's/^#ParallelDownloads\s*=\s*5/ParallelDownloads = 5/' /etc/pacman.conf
 
 # Use sed to uncomment the "Color" line
 sed -i 's/^#Color$/Color/' /etc/pacman.conf
+
+echo "Parallel downloads and colored output enabled in pacman.conf."
+echo "Ready to speed up your downloads!"

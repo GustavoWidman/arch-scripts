@@ -7,7 +7,7 @@ if [ "$(id -u)" != "0" ]; then
     exit 1
 fi
 
-# Install zsh, bat, fzf and thefuck
+# Install zsh, bat and fzf
 pacman -Syu --noconfirm zsh bat fzf
 
 # Install oh-my-zsh (root)
@@ -30,7 +30,6 @@ curl -Lo /root/.zshrc https://links.r3dlust.com/zshrc
 
 # Custom nanorc
 curl -Lo /etc/nanorc https://links.r3dlust.com/nanorc
-
 # Make opening nano as root have red titlebar
 echo "set titlecolor lightwhite,red" >> /root/.nanorc
 
