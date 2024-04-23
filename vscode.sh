@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # Check if the script is run as root (sudo)
-if [ "$(id -u)" != "0" ]; then
-    echo "This script must be run as root. Please use sudo."
-	echo "Tip: sudo !!"
+if [ "$(id -u)" == "0" ]; then
+    echo "This script musn't be run as root. Please run as your normal user."
     exit 1
 fi
 
+
 # Install snapd
-su -c 'yes | yay -Sy snapd' $(logname)
+yes | yay -Sy snapd
 
 # Turn on and enable snapd and snapd.apparmor services
 systemctl enable snapd --now
