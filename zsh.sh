@@ -30,11 +30,15 @@ chown $(logname) /home/$(logname)/.oh-my-zsh/custom/themes/r3dlust.zsh-theme
 curl -Lo /home/$(logname)/.zshrc https://links.r3dlust.com/zshrc
 curl -Lo /root/.zshrc https://links.r3dlust.com/zshrc
 
+# Change root and user shell
+chsh -s /usr/bin/zsh $(logname)
+chsh -s /usr/bin/zsh root
+
 # Custom nanorc
 curl -Lo /etc/nanorc https://links.r3dlust.com/nanorc
 # Make opening nano as root have red titlebar
 echo "set titlecolor lightwhite,red" >> /root/.nanorc
 
-source /home/$(logname)/.zshrc
+# source /home/$(logname)/.zshrc
 
 echo "Zsh installed successfully!"
