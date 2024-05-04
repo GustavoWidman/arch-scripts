@@ -15,7 +15,7 @@ sudo ./pacman.sh
 ./yay.sh
 
 # Download programming languages, runtime environments and version managers
-sudo ./coding.sh
+./coding.sh
 # GNOME extensions and configurations
 ./gnome.sh
 # ZSH, oh-my-zsh, custom theme and other terminal-related stuff
