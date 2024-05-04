@@ -11,13 +11,13 @@ fi
 yes | yay -Sy snapd
 
 # Turn on and enable snapd and snapd.apparmor services
-systemctl enable snapd --now
-systemctl enable snapd.apparmor --now
+sudo systemctl enable snapd --now
+sudo systemctl enable snapd.apparmor --now
 
 # Fix snap
-ln -s /var/lib/snapd/snap /snap
+sudo ln -s /var/lib/snapd/snap /snap
 
 # Install insiders
-su -c 'snap install code-insiders --classic' $(logname)
+snap install code-insiders --classic
 
 echo "Visual Studio Code Insiders installed successfully!"

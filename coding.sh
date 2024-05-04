@@ -8,23 +8,23 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 # Rust
-su -c 'curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh' $(logname)
-# Rust (root)
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+# Rust (root)
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sudo sh
 
 # Bun
-su -c 'curl -fsSL https://bun.sh/install | bash' $(logname)
+curl -fsSL https://bun.sh/install | bash
 
 # Nvm
-su -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash' $(logname)
-# Nvm (root)
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+# Nvm (root)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | sudo bash
 
 # Pyenv
-su -c 'curl https://pyenv.run | bash' $(logname)
+curl https://pyenv.run | bash
 
 # Uv
-su -c 'curl -LsSf https://astral.sh/uv/install.sh | sh' $(logname)
+curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Croc
-curl https://getcroc.schollz.com | bash
+curl https://getcroc.schollz.com | sudo bash

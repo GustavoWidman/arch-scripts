@@ -24,6 +24,8 @@ su -c 'git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-
 curl -Lo /home/$(logname)/.oh-my-zsh/custom/themes/r3dlust.zsh-theme https://links.r3dlust.com/zsh-theme
 curl -Lo /root/.oh-my-zsh/custom/themes/r3dlust.zsh-theme https://links.r3dlust.com/zsh-theme
 
+chown $(logname) /home/$(logname)/.oh-my-zsh/custom/themes/r3dlust.zsh-theme
+
 # Install custom zshrc
 curl -Lo /home/$(logname)/.zshrc https://links.r3dlust.com/zshrc
 curl -Lo /root/.zshrc https://links.r3dlust.com/zshrc
