@@ -29,7 +29,7 @@ sudo ./zsh.sh
 sudo ./misc.sh
 
 # docker install
-./docker.sh
+sudo ./docker.sh
 
 echo "All scripts have been run successfully!"
 echo "It is suggested to reboot your system now."
