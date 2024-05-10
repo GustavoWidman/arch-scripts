@@ -11,4 +11,8 @@ fi
 sudo pacman -Syu --noconfirm discord
 
 # Install Vencord
-curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh
+sudo killall /opt/discord/Discord
+curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh > install-vencord.sh
+chmod +x install-vencord.sh
+yes | ./install-vencord.sh
+rm install-vencord.sh

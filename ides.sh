@@ -19,5 +19,12 @@ sudo ln -s /var/lib/snapd/snap /snap
 
 # Install insiders
 snap install code-insiders --classic
-
 echo "Visual Studio Code Insiders installed successfully!"
+
+# DataGrip
+snap install datagrip --classic
+echo "DataGrip installed successfully!"
+
+# Postman
+yes | yay -Sy postman-bin
+echo "Postman installed successfully!"
