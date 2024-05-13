@@ -56,6 +56,13 @@ yes | makepkg -si
 cd ..
 rm -rf nautilus-open-in-ptyxis
 
+# Same thing but with "Open in Code" (branch of open in ptyxis)
+git clone -b open-in-code https://github.com/GustavoWidman/nautilus-open-in-ptyxis.git
+cd nautilus-open-in-ptyxis
+yes | makepkg -si
+cd ..
+rm -rf nautilus-open-in-ptyxis
+
 # restart nautilus
 nautilus -q
 
