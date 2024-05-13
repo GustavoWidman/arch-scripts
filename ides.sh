@@ -7,22 +7,13 @@ if [ "$(id -u)" == "0" ]; then
 fi
 
 
-# Install snapd
-yes | yay -Sy snapd
+# Install code insiders from AUR
+yes | yay -S visual-studio-code-insiders-bin
 
-# Turn on and enable snapd and snapd.apparmor services
-sudo systemctl enable snapd --now
-sudo systemctl enable snapd.apparmor --now
-
-# Fix snap
-sudo ln -s /var/lib/snapd/snap /snap
-
-# Install insiders
-snap install code-insiders --classic
 echo "Visual Studio Code Insiders installed successfully!"
 
 # DataGrip
-snap install datagrip --classic
+flatpak install flathub com.jetbrains.DataGrip
 echo "DataGrip installed successfully!"
 
 # Postman
