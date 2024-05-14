@@ -53,8 +53,3 @@ if [ -z "${GITHUB_EMAIL}" ]; then
 fi
 
 git config --global user.email "$GITHUB_EMAIL"
-
-git config --global gpg.format ssh
-git config --global user.signingkey "$SSH_PUB_KEY"
-git config --global commit.gpgsign true
-git config --global url."git@github.com:".insteadOf "https://github.com/"
